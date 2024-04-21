@@ -1,3 +1,14 @@
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 //@ts-ignore
 function sum(a, b) {
     return a + b;
@@ -140,3 +151,37 @@ var displayDetails = function (product) {
 };
 console.log(displayDetails(product1));
 console.log(displayDetails(product2));
+//ep-18
+//Union and intersection
+//hw -union : basically ye func m applicable hoga input me agr diff type k input allow kre ho tb ......aur jab func diff type ki output de tab ......ishe use kr k specify kr dete hain
+var func2 = function (inp) {
+    if (typeof inp === "string") {
+        return inp.toUpperCase();
+    }
+    else if (typeof inp === "number") {
+        return "This is of type number";
+    }
+    else if (typeof inp === "boolean") {
+        return inp == true ? "Yes" : "No";
+    }
+    else {
+        return 'he he';
+    }
+};
+console.log(func2("hello"));
+console.log(func2(false));
+console.log(func2(45));
+var mydetails = {
+    id: 21,
+    name: "Taufiq",
+    email: "tauf@123.com"
+};
+var myAccountDetails = {
+    accountId: 10,
+    accountType: "N/A",
+    balance: 79
+};
+var combine = function (user, account) {
+    return __assign(__assign({}, user), account);
+};
+console.log(combine(mydetails, myAccountDetails));

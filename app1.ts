@@ -212,4 +212,58 @@ const displayDetails = (product:ProductInfo)=> {
 console.log(displayDetails(product1))
 console.log(displayDetails(product2))
 
+//ep-18
+//Union and intersection
+//hw -union : basically ye func m applicable hoga input me agr diff type k input allow kre ho tb ......aur jab func diff type ki output de tab ......ishe use kr k specify kr dete hain
 
+const func2 = ( inp:string | number | boolean ):string=>{
+if(typeof inp === "string" ){
+  return inp.toUpperCase()
+} else if(typeof inp === "number"){
+return `This is of type number`
+} else if (typeof inp === "boolean" ){
+ return inp == true ? "Yes" : "No" 
+} else{return 'he he'}
+}
+
+console.log(func2("hello"))
+console.log(func2(false))
+console.log(func2(45))
+
+// hw
+type user = {
+  id:number;
+  name:string;
+  email:string;
+}
+
+type account = {
+  accountId:number;
+  accountType:string;
+  balance:number;
+}
+
+const mydetails:user = {
+  id:21,
+  name:"Taufiq",
+  email:"tauf@123.com"
+}
+
+const myAccountDetails:account = {
+  accountId:10,
+accountType:"N/A",
+balance:79
+}
+
+
+//diff bw union "|" and intersection "&" 
+
+// const combine = (user:user,account:account):user & account=>{
+// return {...user}
+// }
+
+const combine = (user:user,account:account):user | account=>{
+return {...user}
+}
+ 
+console.log("ep-18",combine(mydetails,myAccountDetails))

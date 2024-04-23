@@ -181,7 +181,18 @@ var myAccountDetails = {
     accountType: "N/A",
     balance: 79
 };
+//diff bw union "|" and intersection "&" 
+// const combine = (user:user,account:account):user & account=>{
+// return {...user}
+// }
 var combine = function (user, account) {
-    return __assign(__assign({}, user), account);
+    return __assign({}, user);
 };
-console.log(combine(mydetails, myAccountDetails));
+console.log("ep-18", combine(mydetails, myAccountDetails));
+//ep-19: Generics
+//hw
+var add = function (a) {
+    return a;
+};
+console.log(add("toffee"));
+console.log(add(1));

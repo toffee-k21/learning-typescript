@@ -267,3 +267,12 @@ return {...user}
 }
  
 console.log("ep-18",combine(mydetails,myAccountDetails))
+
+//ep-19: Generics : no need to use | and & 
+//hw
+const add = <T>(a:T ):T =>{
+return a
+}
+
+console.log(add("toffee"));
+console.log(add(1));
